@@ -24,7 +24,7 @@ namespace BlogAppWebApi.Controllers
         [HttpPost("create-comment")]
         public async Task<ActionResult<CommentService>> CreateComment([FromBody] CommentViewModel input)
         {
-            var comment = _commentService.CreateComment(input);
+            var comment = await _commentService.CreateComment(input);
             return Ok(comment);
 
         }
